@@ -7,7 +7,7 @@
 
 // Common interface
 module.exports = function(text, format) {
-  switch(params.format) {
+  switch(format) {
     case 'mtgonline':
       return require('./parsers/mtgonline').parser(text);
       break;
