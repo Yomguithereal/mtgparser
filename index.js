@@ -5,9 +5,5 @@
  * Author: PLIQUE Guillaume (Yomguithereal)
  */
 
-var fs = require('fs');
-
 // Batch exporting
-exports = {
-  MTGOnlineParser: require('./parsers/mtgonline').parser
-}
+exports.MTGOnline = require('./parsers/mtgonline').parser;
