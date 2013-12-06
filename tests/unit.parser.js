@@ -7,7 +7,8 @@
 
 var fs = require('fs'),
     assert = require('assert'),
-    decParser = require('../parsers/mtgonline').parser;
+    decParser = require('../parsers/MTGOnline').parser
+    mwDeckParser = require('../parsers/MagicWorkstation').parser;
 
 /**
  * Helpers
@@ -49,6 +50,45 @@ describe('.dec file format', function() {
            { number: 4, name: 'Savage Surge' } ],
         name: 'Deck Bloc Dévotion à Nyléa',
         creator: 'ShadowsSoul (magic-ville.com)',
+        format: 'Standard'
+      }
+    );
+  });
+});
+
+
+/**
+ * .mwDeck file format
+ */
+
+describe('.mwDeck file format', function() {
+  it('should return this object', function() {
+    assert.deepEqual(
+      mwDeckParser(loadDeck('sample.mwDeck')),
+      {
+        cards:
+         [ { number: 4, set: 'M14', name: 'Mutavault' },
+           { number: 18, set: 'UNH', name: 'Plains' },
+           { number: 2, set: 'GTC', name: 'Daring Skyjek' },
+           { number: 4, set: 'RTR', name: 'Azorius Arrester' },
+           { number: 4, set: 'M14', name: 'Banisher Priest' },
+           { number: 4, set: 'GTC', name: 'Boros Elite' },
+           { number: 4, set: 'RTR', name: 'Dryad Militant' },
+           { number: 4, set: 'M14', name: 'Imposing Sovereign' },
+           { number: 4, set: 'RTR', name: 'Precinct Captain' },
+           { number: 4, set: 'THS', name: 'Soldier of the Pantheon' },
+           { number: 3, set: 'THS', name: 'Spear of Heliod' },
+           { number: 1, set: 'RTR', name: 'Rootborn Defenses' },
+           { number: 4, set: 'M14', name: 'Brave the Elements' } ],
+        sideboard:
+         [ { number: 1, set: 'DGM', name: 'Wear/Tear' },
+           { number: 2, set: 'THS', name: 'Glare of Heresy' },
+           { number: 3, set: 'M14', name: 'Fiendslayer Paladin' },
+           { number: 3, set: 'DGM', name: 'Riot Control' },
+           { number: 3, set: 'M14', name: 'Ajani, Caller of the Pride' },
+           { number: 3, set: 'RTR', name: 'Rootborn Defenses' } ],
+        name: 'WW Human',
+        creator: 'meltiin (magic-ville.com)',
         format: 'Standard'
       }
     );

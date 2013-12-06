@@ -8,8 +8,11 @@
 // Common interface
 module.exports = function(text, format) {
   switch(format) {
-    case 'mtgonline':
-      return require('./parsers/mtgonline').parser(text);
+    case 'mtgo':
+      return require('./parsers/MTGOnline').parser(text);
+      break;
+    case 'mws':
+      return require('./parsers/MagicWorkstation').parser(text);
       break;
     default:
       throw 'mtgparser: wrong format {' + format + '}';

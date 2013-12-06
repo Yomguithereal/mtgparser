@@ -1,5 +1,5 @@
 /**
- * .dec Format Parser
+ * .mwDec Format Parser
  * ===================
  *
  * Author: PLIQUE Guillaume (Yomguithereal)
@@ -33,20 +33,26 @@ exports.parser = function(string) {
 
         // Deck
         var splat = line.split(' ');
+            card_string = splat.slice(1).join(' '),
+            matches = card_string.match(/\[(.+?)\] (.+?)$/);
 
         deck.cards.push({
           number: +splat[0],
-          name: splat.slice(1).join(' ')
+          set: matches[1],
+          name: matches[2]
         });
       }
       else {
 
         // Sideboard
-        var splat = line.split('SB:  ')[1].split(' ');
+        var splat = line.split('SB:  ')[1].split(' '),
+            card_string = splat.slice(1).join(' '),
+            matches = card_string.match(/\[(.+?)\] (.+?)$/);
 
         deck.sideboard.push({
           number: +splat[0],
-          name: splat.slice(1).join(' ')
+          set: matches[1],
+          name: matches[2]
         });
       }
     }
