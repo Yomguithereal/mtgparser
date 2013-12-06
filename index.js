@@ -7,6 +7,7 @@
 
 var fs = require('fs');
 
+// Batch exporting
 exports = {
   MTGOnlineParser: require('./parsers/mtgonline').parser
 }

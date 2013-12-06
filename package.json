@@ -11,8 +11,8 @@
     "mtg"
   ],
   "author": "Yomguithereal",
-  "license": "MIT",
-  "devDependencies": {
-    "mocha": "1.15.1"
-  }
+  "license": "MIT"
+  // "devDependencies": {
+  //   "mocha": "1.15.1"
+  // }
 }
