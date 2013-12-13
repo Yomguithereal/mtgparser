@@ -7,9 +7,7 @@
 
 var fs = require('fs'),
     assert = require('assert'),
-    decParser = require('../parsers/MTGOnline').parser
-    mwParser = require('../parsers/MagicWorkstation').parser,
-    mtgsParser = require('../parsers/MTGSalvation').parser;
+    parser = require('../index.js');
 
 /**
  * Helpers
@@ -26,7 +24,7 @@ function loadDeck(filename) {
 describe('mtgo file format', function() {
   it('should return this object', function() {
     assert.deepEqual(
-      decParser(loadDeck('sample.dec')),
+      parser(loadDeck('sample.dec'), 'mtgo'),
       {
         cards:
          [ { number: 2, name: 'Nykthos, Shrine to Nyx' },
@@ -63,7 +61,7 @@ describe('mtgo file format', function() {
 describe('Irregular sideboard syntax', function() {
   it('should return this object', function() {
     assert.deepEqual(
-      decParser(loadDeck('sb.dec')),
+      parser(loadDeck('sb.dec'), 'mtgo'),
       {
         cards:
          [ { number: 4, name: 'Devoted Druid' },
@@ -90,7 +88,7 @@ describe('Irregular sideboard syntax', function() {
 describe('mws file format', function() {
   it('should return this object', function() {
     assert.deepEqual(
-      mwParser(loadDeck('sample.mwDeck')),
+      parser(loadDeck('sample.mwDeck'), 'mws'),
       {
         cards:
          [ { number: 4, set: 'M14', name: 'Mutavault' },
@@ -127,7 +125,7 @@ describe('mws file format', function() {
 describe('mtgs file format', function() {
   it('should return this object', function() {
     assert.deepEqual(
-      mtgsParser(loadDeck('sample.mtgsDeck')),
+      parser(loadDeck('sample.mtgsDeck'), 'mtgs'),
       {
         cards:
          [ { number: 4, name: 'Ancient Stirrings' },

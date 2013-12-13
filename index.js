@@ -20,5 +20,5 @@ module.exports = function(text, format) {
   if (requires[format] === undefined)
     throw 'mtgparser: wrong format {' + format + '}';
 
-  return require('./parsers/' + requires[format].parser(text));
+  return require('./parsers/' + requires[format]).parser(text);
 }
