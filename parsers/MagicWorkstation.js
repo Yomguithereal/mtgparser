@@ -1,5 +1,5 @@
 /**
- * .mwDec Format Parser
+ * mws Format Parser
  * ===================
  *
  * Author: PLIQUE Guillaume (Yomguithereal)
@@ -9,14 +9,14 @@ exports.parser = function(string) {
   var deck = {
     cards: [],
     sideboard: []
-  }
+  };
 
   // Iterating through lines
   string.split('\n').map(function(line) {
 
     // Trimming
     line = line.trim();
-    if (line === '')
+    if (!line)
       return false;
 
     if (~line.indexOf('//')) {

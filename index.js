@@ -13,7 +13,8 @@ module.exports = function(text, format) {
 
   var requires = {
     mtgo: 'MTGOnline',
-    mws: 'MagicWorkstation'
+    mws: 'MagicWorkstation',
+    mtgs: 'MTGSalvation'
   };
 
   if (requires[format] === undefined)

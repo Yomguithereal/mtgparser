@@ -8,7 +8,8 @@
 var fs = require('fs'),
     assert = require('assert'),
     decParser = require('../parsers/MTGOnline').parser
-    mwDeckParser = require('../parsers/MagicWorkstation').parser;
+    mwParser = require('../parsers/MagicWorkstation').parser,
+    mtgsParser = require('../parsers/MTGSalvation').parser;
 
 /**
  * Helpers
@@ -20,9 +21,9 @@ function loadDeck(filename) {
 }
 
 /**
- * .dec file format
+ * mtgo file format
  */
-describe('.dec file format', function() {
+describe('mtgo file format', function() {
   it('should return this object', function() {
     assert.deepEqual(
       decParser(loadDeck('sample.dec')),
@@ -83,13 +84,13 @@ describe('Irregular sideboard syntax', function() {
 });
 
 /**
- * .mwDeck file format
+ * mws file format
  */
 
-describe('.mwDeck file format', function() {
+describe('mws file format', function() {
   it('should return this object', function() {
     assert.deepEqual(
-      mwDeckParser(loadDeck('sample.mwDeck')),
+      mwParser(loadDeck('sample.mwDeck')),
       {
         cards:
          [ { number: 4, set: 'M14', name: 'Mutavault' },
@@ -115,6 +116,47 @@ describe('.mwDeck file format', function() {
         name: 'WW Human',
         creator: 'meltiin (magic-ville.com)',
         format: 'Standard'
+      }
+    );
+  });
+});
+
+/**
+ * mtgs file format
+ */
+describe('mtgs file format', function() {
+  it('should return this object', function() {
+    assert.deepEqual(
+      mtgsParser(loadDeck('sample.mtgsDeck')),
+      {
+        cards:
+         [ { number: 4, name: 'Ancient Stirrings' },
+           { number: 2, name: 'Breeding Pool' },
+           { number: 4, name: 'Deathrender' },
+           { number: 4, name: 'Deathrite Shaman' },
+           { number: 3, name: 'Emrakul, the Aeons Torn' },
+           { number: 4, name: 'Fauna Shaman' },
+           { number: 1, name: 'Forest' },
+           { number: 2, name: 'Liliana of the Veil' },
+           { number: 1, name: 'Marsh Flats' },
+           { number: 4, name: 'Misty Rainforest' },
+           { number: 4, name: 'Noble Hierarch' },
+           { number: 3, name: 'Overgrown Tomb' },
+           { number: 4, name: 'Serum Visions' },
+           { number: 2, name: 'Steelshaper\'s Gift' },
+           { number: 1, name: 'Swamp' },
+           { number: 4, name: 'Sylvan Caryatid' },
+           { number: 1, name: 'Temple Garden' },
+           { number: 4, name: 'Verdant Catacombs' },
+           { number: 4, name: 'Viscera Seer' },
+           { number: 2, name: 'Watery Grave' },
+           { number: 2, name: 'Wild Cantor' } ],
+        sideboard:
+         [ { number: 3, name: 'Abrupt Decay' },
+           { number: 3, name: 'Damnation' },
+           { number: 4, name: 'Leyline of Sanctity' },
+           { number: 3, name: 'Leyline of the Void' },
+           { number: 2, name: 'Remand' } ]
       }
     );
   });
