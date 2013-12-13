@@ -56,6 +56,31 @@ describe('.dec file format', function() {
   });
 });
 
+/**
+ * Irregular sideboard syntax
+ */
+describe('Irregular sideboard syntax', function() {
+  it('should return this object', function() {
+    assert.deepEqual(
+      decParser(loadDeck('sb.dec')),
+      {
+        cards:
+         [ { number: 4, name: 'Devoted Druid' },
+           { number: 4, name: 'Elvish Archdruid' },
+           { number: 4, name: 'Essence Warden' },
+           { number: 4, name: 'Fauna Shaman' },
+           { number: 4, name: 'Ivy Lane Denizen' },
+           { number: 4, name: 'Joraga Treespeaker' },
+           { number: 4, name: 'Joraga Warcaller' },
+           { number: 4, name: 'Llanowar Elves' },
+           { number: 4, name: 'Wall of Tanglecord' },
+           { number: 4, name: 'Presence of Gond' },
+           { number: 20, name: 'Forest' } ],
+        sideboard: [ { number: 4, name: 'Helix Pinnacle' } ]
+      }
+    );
+  });
+});
 
 /**
  * .mwDeck file format

@@ -42,7 +42,7 @@ exports.parser = function(string) {
       else {
 
         // Sideboard
-        var splat = line.split('SB:  ')[1].split(' ');
+        var splat = line.split('SB:')[1].trim().split(' ');
 
         deck.sideboard.push({
           number: +splat[0],
