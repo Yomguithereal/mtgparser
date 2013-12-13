@@ -13,7 +13,7 @@ npm install mtg-parser
 Through your package.json dependencies
 
 ```json
-dependencies: {
+"dependencies": {
 	"mtg-parser": "0.1.0"
 }
 ```
@@ -46,7 +46,6 @@ SB:  3 Leafcrown Dryad
 
 ```js
 var mtgparser = require('mtg-parser');
-
 var deck = mtgparser(deck_string, 'mtgo');
 ```
 would return
@@ -68,15 +67,13 @@ would return
 
 ## Supported Formats
 
-* [MTG Online](#mtg_online)
-* [Magic Workstation](#magic_workstation)
-* [MTG Salvation](#mtg_salvation)
+* [MTG Online](#mtg-online)
+* [Magic Workstation](#magic-workstation)
+* [MTG Salvation](#mtg-salvation)
 
 ### MTG Online
 
-format identifier: **mtgo**
-
-Example
+identifier: **mtgo**
 
 ```
 // NAME : Deck Bloc Dévotion à Nyléa
@@ -105,9 +102,7 @@ SB:  4 Savage Surge
 
 ### Magic Workstation
 
-format identifier: **mws**
-
-Example
+identifier: **mws**
 
 ```
 // Deck file for Magic Workstation (http://www.magicworkstation.com)
@@ -137,9 +132,7 @@ SB:  3 [RTR] Rootborn Defenses
 
 ### MTG Salvation
 
-format identifier: **mtgs**
-
-Example
+identifier: **mtgs**
 
 ```
 [DECK]
