@@ -7,15 +7,17 @@
 
 // Common interface
 module.exports = function(text, format) {
-  switch(format) {
-    case 'mtgo':
-      return require('./parsers/MTGOnline').parser(text);
-      break;
-    case 'mws':
-      return require('./parsers/MagicWorkstation').parser(text);
-      break;
-    default:
-      throw 'mtgparser: wrong format {' + format + '}';
-      break;
-  }
+
+  // Default value
+  format = format || 'mtgo';
+
+  var requires = {
+    mtgo: 'MTGOnline',
+    mws: 'MagicWorkstation'
+  };
+
+  if (requires[format] === undefined)
+    throw 'mtgparser: wrong format {' + format + '}';
+
+  return require('./parsers/' + requires[format].parser(text));
 }
