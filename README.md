@@ -170,7 +170,7 @@ Sideboard
 
 ### Contribution
 
-Please feel free to contribute to this compilation of parsers. If you do so, please add unit tests accordingly with mocha.
+Please feel free to contribute to this compilation of parsers. If you do so, please add unit tests accordingly. You can run them with the following command.
 
 ```
 npm test
