@@ -4,7 +4,7 @@
   "description": "A compilation of handy parsers for popular Magic the Gathering deck text representation formats.",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha tests/unit.parser.js"
+    "test": "mocha"
   },
   "keywords": [
     "parser",

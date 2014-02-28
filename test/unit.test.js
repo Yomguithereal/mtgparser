@@ -14,7 +14,7 @@ var fs = require('fs'),
  */
 function loadDeck(filename) {
   return fs.readFileSync(
-    process.cwd() + '/tests/resources/' + filename, 'utf-8'
+    process.cwd() + '/test/resources/' + filename, 'utf-8'
   );
 }
 
