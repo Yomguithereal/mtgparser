@@ -13,8 +13,10 @@ npm install mtg-parser
 Through your package.json dependencies
 
 ```json
-"dependencies": {
-	"mtg-parser": "0.1.0"
+{
+  "dependencies": {
+    "mtg-parser": "0.1.0"
+  }
 }
 ```
 
@@ -50,18 +52,18 @@ var deck = mtgparser(deck_string, 'mtgo');
 ```
 would return
 
-```
+```js
 {
-	name: 'Dummy deck',
-	format: 'Standard',
-	cards: [
-		{number: 2, name: 'Nykthos, Shrine to Nyx'},
-		{number: 18, name: 'Forest'},
-		{number: 2, name: 'Nylea, God of the Hunt'}
-	],
-	sideboard: [
-		{number: 3, name: 'Leafcrown Dryad'}
-	]
+  name: 'Dummy deck',
+  format: 'Standard',
+  cards: [
+    {number: 2, name: 'Nykthos, Shrine to Nyx'},
+    {number: 18, name: 'Forest'},
+    {number: 2, name: 'Nylea, God of the Hunt'}
+  ],
+  sideboard: [
+    {number: 3, name: 'Leafcrown Dryad'}
+  ]
 }
 ```
 
@@ -136,34 +138,34 @@ identifier: **mtgs**
 
 ```
 [DECK]
-4x	Ancient Stirrings
-2x	Breeding Pool
-4x	Deathrender
-4x	Deathrite Shaman
-3x	Emrakul, the Aeons Torn
-4x	Fauna Shaman
-1x	Forest
-2x	Liliana of the Veil
-1x	Marsh Flats
-4x	Misty Rainforest
-4x	Noble Hierarch
-3x	Overgrown Tomb
-4x	Serum Visions
-2x	Steelshaper's Gift
-1x	Swamp
-4x	Sylvan Caryatid
-1x	Temple Garden
-4x	Verdant Catacombs
-4x	Viscera Seer
-2x	Watery Grave
-2x	Wild Cantor
+4x  Ancient Stirrings
+2x  Breeding Pool
+4x  Deathrender
+4x  Deathrite Shaman
+3x  Emrakul, the Aeons Torn
+4x  Fauna Shaman
+1x  Forest
+2x  Liliana of the Veil
+1x  Marsh Flats
+4x  Misty Rainforest
+4x  Noble Hierarch
+3x  Overgrown Tomb
+4x  Serum Visions
+2x  Steelshaper's Gift
+1x  Swamp
+4x  Sylvan Caryatid
+1x  Temple Garden
+4x  Verdant Catacombs
+4x  Viscera Seer
+2x  Watery Grave
+2x  Wild Cantor
 
 Sideboard
-3x	Abrupt Decay
-3x	Damnation
-4x	Leyline of Sanctity
-3x	Leyline of the Void
-2x	Remand
+3x  Abrupt Decay
+3x  Damnation
+4x  Leyline of Sanctity
+3x  Leyline of the Void
+2x  Remand
 [/DECK]
 [URL="http://tappedout.net/mtg-decks/deathrender-a-combo-concept/"]Link to deck @ TappedOut.net[/URL]
 ```
